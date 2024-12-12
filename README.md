@@ -145,27 +145,128 @@ Run the appropriate script for your operating system to set up the database, use
 
    - **`/dev-tx-hibernate`**  
      Demonstrates successful access to lazy-fetched fields using `Hibernate.initialize()` under a `Transaction`:
-     *(Example response shown earlier)*
+     ```html
+	DeveloperEntity{id=1, firstName='Alice', lastName='Smith', startDate=2023-01-01, endDate=2023-12-31, position=DevelopmentPositionEntity{id=1, title='Backend Developer', requiredSkills=[DevelopmentSkillEntity{id=1, skillName='Java'}, DevelopmentSkillEntity{id=3, skillName='SQL'}]}, skills=[DevelopmentSkillEntity{id=1, skillName='Java'}, DevelopmentSkillEntity{id=2, skillName='Python'}]}
+   	```
 
    - **`/dev-tx-dto`**  
      Demonstrates converting an entity to a DTO under a `Transaction`:
-     *(Example response shown earlier)*
+     ```html
+     DeveloperDto{id=2, firstName='Bob', lastName='Johnson', startDate=2023-01-01, endDate=2023-12-31, position=PositionDto{id=2, title='Data Analyst', requiredSkills=[SkillDto{id=2, skillName='Python'}]}, skills=[SkillDto{id=2, skillName='Python'}, SkillDto{id=3, skillName='SQL'}]}
+     ```
 
    - **`/json-error`**  
-     Demonstrates the failure of serializing lazy-fetched fields wrapped in `HibernateProxy`:
-     *(Example response shown earlier)*
+     Demonstrates the failure of serializing lazy-fetched fields wrapped in `HibernateProxy`:     
+     ```json
+   	{
+	  "status": "error",
+	  "message": "Error occurred: Attempted to serialize java.lang.Class: org.hibernate.proxy.HibernateProxy. Forgot to register a type adapter?"
+	}
+    ```
 
    - **`/json-hibernate`**  
-     Demonstrates the serialization of lazy-fetched fields using a `HibernateProxyAdapterFactory` with `Hibernate.initialize()`:
-     *(Example response shown earlier)*
+     Demonstrates the serialization of lazy-fetched fields using a `HibernateProxyAdapterFactory` with `Hibernate.initialize()`:     
+	 ```json
+	   {
+		  "id": 1,
+		  "firstName": "Alice",
+		  "lastName": "Smith",
+		  "startDate": "2023-01-01",
+		  "endDate": "2023-12-31",
+		  "position": {
+		    "id": 1,
+		    "title": "Backend Developer",
+		    "requiredSkills": [
+		      {
+		        "id": 1,
+		        "skillName": "Java"
+		      },
+		      {
+		        "id": 3,
+		        "skillName": "SQL"
+		      }
+		    ]
+		  },
+		  "skills": [
+		    {
+		      "id": 1,
+		      "skillName": "Java"
+		    },
+		    {
+		      "id": 2,
+		      "skillName": "Python"
+		    }
+		  ]
+		}
+	 ```
 
    - **`/json-dto`**  
-     Demonstrates the serialization of DTO created from the entity under a `Transaction`:
-     *(Example response shown earlier)*
+     Demonstrates the serialization of DTO created from the entity under a `Transaction`:     
+   ```json
+   {
+	  "id": 2,
+	  "firstName": "Bob",
+	  "lastName": "Johnson",
+	  "startDate": "2023-01-01",
+	  "endDate": "2023-12-31",
+	  "position": {
+	    "id": 2,
+	    "title": "Data Analyst",
+	    "requiredSkills": [
+	      {
+	        "id": 2,
+	        "skillName": "Python"
+	      }
+	    ]
+	  },
+	  "skills": [
+	    {
+	      "id": 2,
+	      "skillName": "Python"
+	    },
+	    {
+	      "id": 3,
+	      "skillName": "SQL"
+	    }
+	  ]
+	}
+   ```
 
    - **`/json-tx`**  
      Demonstrates the serialization of entities with `HibernateProxy` fields using a `HibernateProxyAdapterFactory` in an active `Transaction`:
-     *(Example response shown earlier)*
+     ```json
+   {
+	  "id": 1,
+	  "firstName": "Alice",
+	  "lastName": "Smith",
+	  "startDate": "2023-01-01",
+	  "endDate": "2023-12-31",
+	  "position": {
+	    "id": 1,
+	    "title": "Backend Developer",
+	    "requiredSkills": [
+	      {
+	        "id": 1,
+	        "skillName": "Java"
+	      },
+	      {
+	        "id": 3,
+	        "skillName": "SQL"
+	      }
+	    ]
+	  },
+	  "skills": [
+	    {
+	      "id": 1,
+	      "skillName": "Java"
+	    },
+	    {
+	      "id": 2,
+	      "skillName": "Python"
+	    }
+	  ]
+	}
+   ```
 
 ---
 
