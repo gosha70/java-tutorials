@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/examples/json-mapper/json-mapper-contract/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/json-mapper/json-mapper-contract/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/json-mapper/json-mapper-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/json-mapper/json-mapper-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/json-mapper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/json-mapper/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/lazy-fetch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/lazy-fetch/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/sdlc/sdlc-contract/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/sdlc/sdlc-contract/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/sdlc/sdlc-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/sdlc/sdlc-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/sdlc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/sdlc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
